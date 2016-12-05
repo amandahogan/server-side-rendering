@@ -1,0 +1,18 @@
+.hidden {
+  display: none;
+}
+
+.details {
+  background-color: #DDD;
+  border-style: inset;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  width: 150px;
+  background-color: inherit;
+  border-style: groove;
+}

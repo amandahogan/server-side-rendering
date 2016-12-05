@@ -8,6 +8,7 @@ var app = express()
 module.exports = app
 
 // Middleware
+app.use(express.static('public'))
 app.engine('hbs', hbs({
   extname: 'hbs',
   defaultLayout: 'main'
@@ -17,3 +18,4 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Routes
 app.get('/', routes.home)
+app.get('/author/:id', routes.author)

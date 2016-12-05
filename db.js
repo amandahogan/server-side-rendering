@@ -1,5 +1,6 @@
 module.exports = {
-  getHomeData: getHomeData
+  getHomeData: getHomeData,
+  githubData: githubData
 }
 
 function getHomeData () {
@@ -17,4 +18,8 @@ function getHomeData () {
       colour: 'yellow'
     }]
   }
+}
+
+function githubData () {
+  return require("./github")
 }
