@@ -1,8 +1,8 @@
 var db = require('./db')
 
 module.exports = {
-  home,
-  author
+  home
+//  author
 }
 
 // function home (req, res) {
@@ -12,22 +12,36 @@ module.exports = {
 // }
 
 function home (req, res) {
-  var data = {
-    title: 'The repo page',
-    headerText: 'Repository List',
-    repos: db.githubData()
+  db.githubData(renderRepos)
+
+  function renderRepos (err, repos) {
+    var data = {
+      title: 'The repo page',
+      headerText: 'Repository List',
+      repos: repos
+    }
+    res.render('home', data)
   }
-  res.render('home', data)
 }
 
-function author (req, res) {
-  var id = Number(req.params.id);
-  var repo = db.githubData().find(function (repo) {
-    return repo.owner.id === id;
-  });
-  if (repo === undefined) {
-    res.send('Owner not found.')
-  } else {
-    res.render('author', repo.owner);
-  }
-}
+// function author (req, res) {
+//   var id = Number(req.params.id)
+
+  // db.githubData(function (err, data) {
+  //   // Show the data.
+  //   var repo = data.find(function (repo) {
+  //     return repo.owner.id === id;
+  //   })
+  //   res.render('author', repo.owner)
+  // })
+
+  // var repo = db.githubData().find(function (repo) {
+  //   return repo.owner.id === id;
+  // })
+
+//   if (repo === undefined) {
+//     res.send('Owner not found.')
+//   } else {
+//     res.render('author', repo.owner)
+//   }
+// }

@@ -1,4 +1,4 @@
-module.exports = [
+ [
   {
     "id": 62889967,
     "name": "amandahogan.github.io",
@@ -1231,4 +1231,4 @@ module.exports = [
     "watchers": 0,
     "default_branch": "master"
   }
-]
+ ]

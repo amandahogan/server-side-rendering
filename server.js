@@ -18,4 +18,4 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Routes
 app.get('/', routes.home)
-app.get('/author/:id', routes.author)
+// app.get('/author/:id', routes.author)
